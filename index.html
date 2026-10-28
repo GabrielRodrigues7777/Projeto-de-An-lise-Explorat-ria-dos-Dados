@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Tarifas aéreas domésticas — Jan/2025</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Tarifas aéreas domésticas — Janeiro/2025<small>ANAC · médias ponderadas pelos assentos vendidos</small></h1>
+        <div class="seg" role="group" aria-label="Companhia" id="seg"></div>
+    </header>
+    <main>
+        <div class="k"><span>Assentos vendidos</span><b id="k1"></b></div>
+        <div class="k"><span>Receita estimada</span><b id="k2"></b></div>
+        <div class="k"><span>Tarifa média</span><b id="k3"></b></div>
+        <div class="k"><span>Tarifa mediana</span><b id="k4"></b></div>
+        <div class="map">
+            <h2>Mapa do mercado: regiões e aeroportos mais movimentados</h2>
+            <div class="mg">
+                <div class="lg">
+                    <div>
+                        <h3>Cor e tamanho: assentos embarcados</h3>
+                        <div class="ramp"></div>
+                        <div class="rl"><span id="lo"></span><span id="hi"></span></div>
+                        <div class="rl"><span>menos movimento</span><span>mais movimento</span></div>
+                    </div>
+                    <div>
+                        <h3>Tamanho das bolhas</h3>
+                        <div class="sz" id="sz"></div>
+                    </div>
+                    <div><label><input type="checkbox" id="rt" checked> Mostrar as rotas mais movimentadas
+                            (linhas)</label></div>
+                </div>
+                <div class="mv"><svg id="svg" viewBox="0 0 760 777" preserveAspectRatio="xMidYMid meet" role="img"
+                        aria-label="Mapa do Brasil com aeroportos por tarifa média e volume de assentos"></svg>
+                    <div class="tip" id="tip"></div>
+                </div>
+                <div class="rk">
+                    <div>
+                        <h3 style="font-size:14px">Regiões mais movimentadas</h3>
+                        <p class="h">A região com mais assentos embarcados fica no topo</p>
+                        <ol id="ex"></ol>
+                    </div>
+                    <div>
+                        <h3>Aeroportos mais movimentados</h3>
+                        <p class="h">Assentos embarcados em janeiro</p>
+                        <ol id="ch"></ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="t w8">
+            <h2>Assentos vendidos por tarifa (R$)</h2>
+            <div class="box"><canvas id="c1"></canvas></div>
+            <p>A maior parte do volume está em tarifas baixas; a cauda acima de R$ 1.500 é longa, mas pequena.</p>
+        </div>
+        <div class="t w4">
+            <h2>% dos assentos por faixa de tarifa</h2>
+            <div class="box"><canvas id="c2"></canvas></div>
+            <p id="n2"></p>
+        </div>
+        <div class="t w4">
+            <h2>Quem vende mais assentos?</h2>
+            <div class="sub">Participação de cada companhia no total de assentos vendidos (%)</div>
+            <div class="box"><canvas id="c3"></canvas></div>
+            <p id="n3"></p>
+        </div>
+        <div class="t w4">
+            <h2>Quem cobra mais caro?</h2>
+            <div class="sub">Tarifa média paga por assento (R$) e diferença para a média do mercado</div>
+            <div class="box"><canvas id="c4"></canvas></div>
+            <p id="n4"></p>
+        </div>
+        <div class="t w4">
+            <h2>Qual empresa vende mais passagens?</h2>
+            <div class="sub">Passagens vendidas por companhia em janeiro/2025 (a base cobre apenas este mês)</div>
+            <div class="box"><canvas id="c5"></canvas></div>
+            <p id="n5"></p>
+        </div>
+    </main>
+    <footer>A companhia ABJ (0,01% dos assentos) fica fora dos filtros.</footer>
+ 
+</body>
+<script src="script.js"></script>
+</html>
